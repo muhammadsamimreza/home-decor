@@ -19,7 +19,7 @@ const Home = () => {
         ))}
       </div>
       <div className="flex justify-center items-center my-5">
-        <Link to='/products' className="btn bg-teal-500 text-white hover:bg-teal-600 hover:scale-102 transform transition">See all Products</Link>
+        <Link to='/allproducts' className="btn bg-teal-500 text-white hover:bg-teal-600 hover:scale-102 transform transition">See all Products</Link>
       </div>
     </div>
   );

@@ -3,8 +3,9 @@ import { createBrowserRouter } from 'react-router'
 import Root from '../pages/Root/Root'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import Home from '../pages/Home/Home'
-import Product from '../pages/Product/Product'
-import ListProduct from '../pages/ListProduct/ListProduct'
+import AllProduct from '../pages/AllProduct/AllProduct'
+import ProductDetails from '../pages/ProductDetails/ProductDetails'
+import WishList from '../pages/WishList/WishList'
 
 const router = createBrowserRouter([
     {
@@ -18,12 +19,16 @@ const router = createBrowserRouter([
             Component: Home
         },
         {
-            path: '/products',
-            Component: Product
+            path: '/allproducts',
+            Component: AllProduct
         },
         {
-            path: '/list',
-            Component: ListProduct
+            path: '/productdetails/:id',
+            Component: ProductDetails
+        },
+        {
+            path: '/wishlist',
+            Component: WishList
         },
       ]
     }

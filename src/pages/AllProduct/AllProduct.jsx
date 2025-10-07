@@ -89,16 +89,16 @@ import useProducts from "../../Hooks/useProducts";
 import ProductCard from "../ProductCard/ProductCard";
 import { Link } from "react-router";
 
-const Product = () => {
+const AllProduct = () => {
   const { products } = useProducts();
   const [sort, setSort] = useState("none");
   const [search, setSearch] = useState("");
 
-  // সার্চ ও সোর্ট একত্রে হ্যান্ডেল করার ফাংশন
+  
   const getDisplayProducts = () => {
     let filtered = [...products];
 
-    // সার্চ ফিল্টার (যদি কিছু টাইপ করা হয়)
+    
     const trimmedSearch = search.trim().toLowerCase();
     if (trimmedSearch !== "") {
       filtered = filtered.filter((product) =>
@@ -106,7 +106,7 @@ const Product = () => {
       );
     }
 
-    // সোর্ট (সার্চ থাক বা না থাক, সবসময় কাজ করবে)
+   
     if (sort === "price") {
       filtered.sort((a, b) => a.price - b.price);
     } else if (sort === "names") {
@@ -125,7 +125,8 @@ const Product = () => {
       <div className="max-w-screen-xl w-full mx-auto mt-20">
         <div className="flex justify-between items-center mb-14">
           <div className="w-[50%]">
-            <h1 className="text-3xl font-bold">All Products</h1>
+            <h1 className="text-3xl font-bold">All Products 
+              <span className="text-sm ml-2">({displayUpdated.length})</span></h1>
           </div>
 
         
@@ -189,4 +190,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default AllProduct;
